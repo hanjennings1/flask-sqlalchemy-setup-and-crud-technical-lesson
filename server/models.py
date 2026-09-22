@@ -13,8 +13,8 @@ db = SQLAlchemy(metadata=metadata)
 class Pet(db.Model):
     __tablename__ = 'pets'
 
-    id = db.Column(db.Integer)
-    name = db.Column(db.String)
+    id = db.Column(db.Integer, primary_key=True)    # add primary_key constraint
+    name = db.Column(db.String(50))             # max characters = (50)
     species = db.Column(db.String)
 
     def __repr__(self):
